@@ -1,9 +1,9 @@
 package pro.sky.java.course1.kursovaya1;
 
-import java.util.Arrays;
+
 
 public class Employee {
-    private  int id;
+    private final int id;
     private static int counterId = 1;
     private String fullName;
     private int department;
@@ -45,10 +45,10 @@ public class Employee {
     }
 
     public String toString() {
-        return id+". Ф.И.О. сотрудника - " + getFullName() + ". Работает в отделе " + getDepartment() + ". Зарплата - " + getSalary() + ".";
+        return id + ". Ф.И.О. сотрудника - " + getFullName() + ". Работает в отделе " + getDepartment() + ". Зарплата - " + getSalary() + ".";
     }
 
-    }
+}
 
 
 
