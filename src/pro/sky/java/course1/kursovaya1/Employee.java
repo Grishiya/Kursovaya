@@ -5,7 +5,7 @@ package pro.sky.java.course1.kursovaya1;
 public class Employee {
     private final int id;
     private static int counterId = 1;
-    private String fullName;
+    private final String fullName;
     private int department;
     private int salary;
 
@@ -32,9 +32,6 @@ public class Employee {
         return counterId;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
 
     public void setDepartment(int department) {
         this.department = department;

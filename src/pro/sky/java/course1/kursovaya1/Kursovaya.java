@@ -2,6 +2,7 @@ package pro.sky.java.course1.kursovaya1;
 
 public class Kursovaya {
     private static final Employee[] employee = new Employee[10];
+
     public static void main(String[] args) {
 
         employee[0] = new Employee("Карасик Василий Вальеревич", 3, 80000);
@@ -19,7 +20,12 @@ public class Kursovaya {
         minSalary();
         maxSalary();
         mediumSalary();
-    }    public static void allEmployee() {
+        {
+            allFullName();
+        }
+    }
+
+    public static void allEmployee() {
         for (int i = 0; i < employee.length; i++) {
             System.out.println(employee[i]);
         }
@@ -34,23 +40,27 @@ public class Kursovaya {
     }
 
     public static void minSalary() {
-        int minSalary = employee[0].getSalary();
+        Employee minSalary = employee[0];
+        int minSalary1 = minSalary.getSalary();
         for (int i = 0; i < employee.length; i++) {
-            if (minSalary > employee[i].getSalary()) {
-                minSalary = employee[i].getSalary();
+            if (minSalary1 > employee[i].getSalary()) {
+                minSalary = employee[i];
             }
         }
-        System.out.println("Самая низкая зарплата = " + minSalary);
+        System.out.println("Самая низкая зарплата у " + minSalary.getFullName() + " = " + minSalary.getSalary());
     }
 
     public static void maxSalary() {
-        int maxSalary = employee[0].getSalary();
+        Employee maxSalary1 = employee[0];//.getSalary();
+        int maxSalary = maxSalary1.getSalary();
         for (int i = 0; i < employee.length; i++) {
             if (maxSalary < employee[i].getSalary()) {
                 maxSalary = employee[i].getSalary();
+                maxSalary1 = employee[i];//.getSalary();
+
             }
         }
-        System.out.println("Самая большая зарплата = " + maxSalary);
+        System.out.println("Самая большая зарплата у " + maxSalary1.getFullName() + " = " + maxSalary1.getSalary());
     }
 
     public static void mediumSalary() {
@@ -60,8 +70,15 @@ public class Kursovaya {
             sum = sum + employee[i].getSalary();
             medium = sum / employee.length;
         }
-        System.out.println("Средняя зарплата в компании = " + medium);
+        System.out.println("Средняя зарплата в компании " + medium);
     }
 
+    public static void allFullName() {
+        for (int i = 0; i < employee.length; i++) {
+            System.out.println("Вывожу только имя сотрудника : - " + employee[i].getFullName());
+
+
+        }
+    }
 }
 
